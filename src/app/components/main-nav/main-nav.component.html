@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img width="50" class="circle responsive-img"
+           src="http://civilcode.ge/images/2/24/Blank-avatar.png"
+           alt="logo-img">
+      <p class="txt-avatar">{{ name }}</p>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/"><i class="material-icons">
+        home
+      </i>Inicio</a>
+      <a mat-list-item routerLink="/temas"><i class="material-icons">
+        view_headline
+      </i>Temas</a>
+      <a mat-list-item routerLink="/temas_destacados"><i class="material-icons">
+        stars
+      </i>Temas destacados</a>
+      <a mat-list-item (click)="signOut()" ><i class="material-icons">
+        power_off
+      </i>Cerrar sesion</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">reorder</mat-icon>
+      </button>
+      <span>Mahou</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content>
+    </ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

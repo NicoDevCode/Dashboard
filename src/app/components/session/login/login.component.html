@@ -1,0 +1,9 @@
+
+<div class="log-form">
+  <h2>Inicio de sesión</h2>
+  <form>
+    <input [(ngModel)]="username" type="text" title="username" placeholder="Usuario" [ngModelOptions]="{standalone: true}"/>
+    <input [(ngModel)]="password" type="password" title="username" placeholder="Contraseña" [ngModelOptions]="{standalone: true}"/>
+    <button (click)="signIn()"   type="submit" class="btn">Entrar</button>
+  </form>
+</div><!--end log form -->

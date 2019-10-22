@@ -1,0 +1,92 @@
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#0C9;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+  margin-top:22px;
+}
+
+
+header,
+main,
+footer {
+  padding-left: 240px;
+}
+
+body {
+  backgroud: white;
+}
+
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
+
+#credits li,
+#credits li a {
+  color: white;
+}
+
+#credits li a {
+  font-weight: bold;
+}
+
+.footer-copyright .container,
+.footer-copyright .container a {
+  color: #BCC2E2;
+}
+
+.fab-tip {
+  position: fixed;
+  right: 85px;
+  padding: 0px 0.5rem;
+  text-align: right;
+  background-color: #323232;
+  border-radius: 2px;
+  color: #FFF;
+  width: auto;
+
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  -webkit-box-shadow: -1px -2px 25px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px -2px 25px -9px rgba(0,0,0,0.75);
+  box-shadow: -1px -2px 25px -9px rgba(0,0,0,0.75);
+}
+
+.panel{
+  border: solid #00000036 1px;
+  padding: 4px;
+  border-radius: 6px;
+  -webkit-box-shadow: -1px -2px 15px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px -2px 15px -9px rgba(0,0,0,0.75);
+  box-shadow: -1px -2px 15px -9px rgba(0,0,0,0.75);
+
+}
+
+.mat-form-field {
+  display: block;
+  position: relative;
+  text-align: left;
+}

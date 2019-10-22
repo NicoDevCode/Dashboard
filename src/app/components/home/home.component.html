@@ -1,0 +1,85 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-primary" role="alert">
+        <h1>Pagina principal.</h1> Informacion de los temas en Bigtincan Hub y Ultimos Actualizados
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>Primeros 10 temas destacados</b>
+          </div>
+        </div>
+        <ng-container *ngIf="!progress; else spinner">
+          <div class="row mt-3">
+            <div class="col-md-12 mb-2" *ngFor="let favorito of last_favoritos">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img width="100" [src]="favorito.channel.thumbnail" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                      <h6>{{ favorito.name }}</h6>
+                      <p style="font-size: 12px;">{{ favorito.channel.name }}</p>
+                    </div>
+                    <div class="col-md-2 mt-4">
+                      <button class="btn btn-info btn-xs">
+                        {{favorito.order}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #spinner>
+          <div align="center"  class="mt-5">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>Ultimos 10 temas publicados</b>
+          </div>
+        </div>
+        <ng-container *ngIf="!progress; else spinner">
+        <div class="row mt-3">
+          <div class="col-md-12 mb-2" *ngFor="let publicado of last_publicados">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img width="100" [src]="publicado.channel.thumbnail" class="img-responsive">
+                  </div>
+                  <div class="col-md-8">
+                    <h6>{{ publicado.name }}</h6>
+                    <p style="font-size: 12px;">{{ publicado.channel.name }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </ng-container>
+        <ng-template #spinner>
+          <div align="center" class="mt-5">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

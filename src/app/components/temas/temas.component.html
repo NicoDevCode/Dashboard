@@ -1,0 +1,89 @@
+<!-- Code begins here -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-primary" role="alert">
+        <h1>Temas destacados.</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4  mt-5 mb-5">
+      <mat-form-field>
+        <input (keyup)="search($event)" matInput placeholder="Buscar temas descados">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4" align="center"></div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div style="padding: 35px;" align="center" class="card">
+        <div class="row">
+          <div class="left card-title">
+            <b>temas destacados</b>
+          </div>
+        </div>
+        <ng-container *ngIf="!progress; else spinner">
+        <div class="row mt-3">
+          <div class="col-md-6 mb-2" *ngFor="let temafav of temas">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img width="100" [src]="temafav.channel.thumbnail" class="img-responsive">
+                  </div>
+                  <div class="col-md-5 mt-4">
+                    <h6>{{ temafav.name }}</h6>
+                    <p style="font-size: 12px;">{{ temafav.channel.name }}</p>
+                  </div>
+                  <div class="col-md-4 mt-4">
+                    <button (click)="openDialog(temafav.id)" class="btn btn-info btn-xs">
+                      {{ temafav.order}}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </ng-container>
+        <ng-template #spinner>
+          <div class="row">
+            <div class="col-md-12">
+              <div align="center"  class="mt-5">
+                <mat-spinner></mat-spinner>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <ngb-pagination
+        style="display: compact"
+        [(page)]="current_url"
+        [pageSize]="1"
+        [directionLinks]="true"
+        [ellipses]="true"
+        [maxSize]="5"
+        [rotate]="true"
+        (pageChange)="setPage($event)"
+        [collectionSize]="pages">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>

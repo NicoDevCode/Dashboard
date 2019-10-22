@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ng-snotify></ng-snotify>
+
+<ng-container *ngIf="login; else loginBlock">
+  <app-main-nav [name]="name">
+    <router-outlet></router-outlet>
+  </app-main-nav>
+</ng-container>
+
+<ng-template #loginBlock>
+  <app-login [login]="login"
+             (setLoginValue)="setLoginValue($event)"
+             (setNameValue)="setNameValue($event)">
+  </app-login>
+</ng-template>
